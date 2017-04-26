@@ -1,0 +1,34 @@
+﻿<Window x:Class="Timers.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Timers"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="24"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Content="Load a .dmp file"
+                       VerticalAlignment="Center" Click="OnOpenDumpFile"
+                       />
+            <TextBox Grid.Column="1" x:Name="tbDumpFilename" Margin="3,0,3,0"
+                     MouseDoubleClick="OnDumpFilenameDoubleClick"/>
+        </Grid>
+        <TextBox Grid.Row="1" x:Name="tbResult" 
+                 FontFamily="Consolas"
+                 Foreground="LightGray" Background="Black"
+                 AcceptsReturn="True"
+                 MaxLines="1000000"
+                 ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                 ScrollViewer.VerticalScrollBarVisibility="Visible"
+                 />
+    </Grid>
+</Window>
